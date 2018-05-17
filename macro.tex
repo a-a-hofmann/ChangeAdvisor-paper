@@ -1,0 +1,43 @@
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{color}
+
+\newboolean{showcomments}
+
+
+\setboolean{showcomments}{true}
+
+% useful to avoid size increasing for textbf command (in order to preserve alignment in tables)
+\newsavebox\CBox
+\def\textBF#1{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textbf{#1}}}
+
+\ifthenelse{\boolean{showcomments}}
+  {\newcommand{\nb}[2]{
+    \fbox{\bfseries\sffamily\scriptsize\color{red}#1}
+    {\sf\small$\blacktriangleright${\color{red}\textit{#2}}$\blacktriangleleft$}
+   }
+   \newcommand{\cvsversion}{\emph{\scriptsize$-$Id: macro.tex,v 1.9 2005/12/09 22:38:33 giulio Exp $}}
+  }
+  {\newcommand{\nb}[2]{}
+   \newcommand{\cvsversion}{}
+  }
+
+
+\newcommand\RQ[1]{\textbf{RQ$_#1$}}
+\newcommand\SIMONE[1]{\nb{SIMONE}{#1}}
+\newcommand\GIO[1]{\nb{GIO}{#1}}
+\newcommand\DARIO[1]{\nb{DARIO}{#1}}
+\newcommand\ROCCO[1]{\nb{ROCCO}{#1}}
+\newcommand\ANDREA[1]{\nb{ANDREA}{#1}}
+\newcommand\FABIO[1]{\nb{FABIO}{#1}}
+\newcommand\SEBA[1]{\nb{SEBA}{#1}}
+\newcommand\ADELINA[1]{\nb{ADELINA}{#1}}
+
+\newcommand\NEW[1]{\nb{NEW}{#1}}
+\newcommand\TODO[1]{\nb{TODO}{#1}}
+\newcommand\UPDATE[1]{\nb{TOUPDATE}{#1}}
+\newcommand\CIT[1]{\nb{Cit.}{#1}}
+
+
+
+

@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{dice1945measures}
+L.~R. Dice.
+\newblock Measures of the amount of ecologic association between species.
+\newblock {\em Ecology}, 26(3):297--302, 1945.
+
+\bibitem{Palomba2017}
+F.~Palomba, P.~Salza, A.~Ciurumelea, S.~Panichella, H.~Gall, F.~Ferrucci, and
+  A.~De~Lucia.
+\newblock Recommending and localizing change requests for mobile apps based on
+  user reviews.
+\newblock In {\em Proceedings of the 39th International Conference on Software
+  Engineering}, ICSE 2017, page to appear. ACM, 2018.
+
+\bibitem{panichella2016ardoc}
+S.~Panichella, A.~Di~Sorbo, E.~Guzman, C.~A. Visaggio, G.~Canfora, and H.~C.
+  Gall.
+\newblock Ardoc: App reviews development oriented classifier.
+\newblock In {\em Proceedings of the 2016 24th ACM SIGSOFT International
+  Symposium on Foundations of Software Engineering}, pages 1023--1027. ACM,
+  2016.
+
+\bibitem{teh2005sharing}
+Y.~W. Teh, M.~I. Jordan, M.~J. Beal, and D.~M. Blei.
+\newblock Sharing clusters among related groups: Hierarchical dirichlet
+  processes.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1385--1392, 2005.
+
+\end{thebibliography}

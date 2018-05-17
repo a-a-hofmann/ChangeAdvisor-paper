@@ -1,0 +1,84 @@
+This section briefly describes the approach and technologies we employed. 
+\tool{} is a tool built with a set of different technologies: the core part, the back-end, is written in Java while the front-end application is written in React.
+This section reports the main characteristics of \tool{}, as well as details about its architecture and inner-working.
+%
+% DESIGN GOALS
+%
+\subsection{Design Goals}
+\tool{} is designed with the main goal to link user feedback, discussing changes in a high-level language, such as feature requests and bug reports, to the source code components that will require modification in order to fulfill said change requests.
+In order to support this goal, \tool{} includes a user-interface in the form of a web application, which the developers can use to easily import user reviews and source code. Additionally, they can update \tool{}'s configuration, start jobs manually, and view a dashboard which includes information such as a timeseries of number of reviews vs. average of reviews, distribution of reviews based on the category given by \texttt{Ardoc}~\cite{panichella2016ardoc} (e.g. FEATURE REQUEST, PROBLEM DISCOVERY, INFORMATION GIVING, etc.), and labels representing the various review clusters.
+
+Both a review miner and a tool to more easily import source code from repositories (at the moment only git is supported, but others will be added at a later date) were added, both of which can be configured and started through the UI.
+Since the review miner is heavily dependent on the format of the Google Play Store, updates to the store might risk breaking the miner, and thus the possibility to import reviews from the file system is also present.
+
+%
+% ARCHITECTURE
+%
+\begin{figure*}[!h]
+    \centering
+    \includegraphics[scale=0.3]{imgs/ChangeAdvisorPipeline.pdf}
+    \caption{Change Advisor Processing Pipeline}
+    	\label{fig:architecture}
+\end{figure*}
+
+\subsection{\tool{} Architecture}
+The overall architecture of \tool{} is depicted in Figure \ref{fig:architecture}.
+As mentioned previously, the tool is divided in a client-side application and a back-end.
+The back-end was written in Java upon Spring Boot and fully leverages the Spring Framework: Spring REST for the HTTP API; Spring Data for database access; Spring Batch for long running jobs. 
+The front-end was written in React and communicates with the back-end via the aforementioned API.
+Given that most processes of \tool{} are long running, we leverage the database to persist the results of the various steps of the tool in order to never have to recompute previous results. Additionally, we leverage the database for costly search and aggregation operations.
+
+The back-end represents the core of \tool{}. The entirety of the logic is implemented at this level. On a logical level, this system can be divided in three components: (i) the \textit{Review Pipeline} that handles the import and preprocessing of user feedback; (ii) the \textit{Source Code Pipeline} which imports source code and preprocessing of source code components; (iii) the \textit{Linking}, which represents the core feature of the \tool{} approach, i.e. the link between the source code component and the user feedback refering such elements. The upcoming sections will further detail both front- as well as back-end and their composing components.
+
+%
+% The Review SUBSYSTEM
+%
+\subsection{The Review Pipeline}
+
+The aim of this subsystem is to facilitate in the fetching and processing of user feedback into clusters that can then be used as input for the linking algorithm.
+
+This system can logically be seen as a sequence of four steps: (i) review import which can be configured based on a schedule to automatically mine user reviews; (ii) the review classification step where we process reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT} using a feedback classifier~\cite{panichella2016ardoc}; (iii) the review preprocessing step in order to clean the user feedback from noise; (iv) the clustering step which groups together user reviews discussing the same change request.
+
+\paragraph{Review import} 
+\tool{} relies for the first step on an external tool, a Java-built scraper tool that relies on PhantomJS\footnote{\url{http://phantomjs.org}} and Selenium\footnote{\url{http://www.seleniumhq.org}} to navigate to and extract the reviews from the Google Play Store.
+%In order to do so, \tool{} extends the \texttt{Extractor} interface of the crawler to add the option of tracking progress. This task can then be started on a separate thread.
+
+\paragraph{Review classification}
+Once the reviews are mined, we employ another external tool, a review classifier~\cite{panichella2016ardoc} which uses Natural Language Processing (NLP), Sentiment and Text Analysis (SA \& TA) in order to process the reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT}. We do this to discern the ones that are useful for linking later on.
+
+\paragraph{Preprocessing}
+To prepare the reviews for clustering, we apply the typical NLP noise removal steps: contraction expansion, stopword removal, and stemming. This results in a collection of bag of words which can then be used as input to a clustering algorithm.
+
+\paragraph{Clustering}
+The goal of this step is to build clusters of reviews discussing the same change requests. Ideally, at the end of this step we have groups of reviews semantically similar to each other. These clusters will then be fed to the core feature of \tool{}, the linking algorithm, as one of the inputs. We use clustering for two reasons: (i) as has been shown in the work of Palomba \textit{et al.}~\cite{Palomba2017} linking single reviews tends to return poor results, and (ii) clustering allows us to group together feedback referring ideally to the same, or at the very least, similar change request, thus avoiding duplicates and making the system more comprehensible and generally easier to follow for the developer. \tool{} tries two separate approaches to clustering. As with the original \tool{} paper~\cite{Palomba2017} we use Hierarchical Dirichlet Process (HDP), proposed by Teh \textit{et al.}~\cite{teh2005sharing}. HDP is an extension of the LDA algorithm where the number of topics is not known a priori. The \texttt{HierarchicalDirichletProcess} class implementing this approach, is a Java port of the \texttt{hdpla} python script that was used in the \tool{} paper~\cite{Palomba2017}.
+Additionally, we attempt to create clusters by computing the \textit{Term-frequency inverse-document-frequency} (tf-idf) score over the N-grams of all reviews, and then picking the N-grams with the highest score and fetching all reviews containing said N-gram. This functionality is implemented in the \texttt{ReviewAggregationService} class.
+
+Regardless of the clustering technique employed, at the end, we will have a set of processed reviews that we can use for linking. The return types of both clustering algorithms implement the \texttt{LinkableReview} interface, allowing the linker to use any of the two. Finally, both outputs are persisted to the database. By doing this, we do not need to compute new clusters each time we want to run the \textit{linker}. The clusters are only recomputed when new reviews are imported into \tool{}.
+
+%
+% Source code SUBSYSTEM
+%
+\subsection{The Source Code Subsystem}
+
+The goal of this subsystem is to provide an easy to use interface to automatically import and process source code into a format that \tool{} can use as input to its linking algorithm. 
+\paragraph{Source code import} 
+Via the web interface a user can easily enter the url of the git repository. \tool{} will then automatically clone the repository, parse the code and divide it in its elements. We define a \textit{source code element} as the basic building blocks of an application, i.e. a \textit{class} in Java. We only keep classes (normal, nested and static nested) and enums. We discards interfaces as they do not implement any logic and would thus rarely be targets for change requests.
+For each \textit{source code element} we parse its public API and comments. This is achieved mainly in two classes: \texttt{DirectoryCrawler}, which recursively crawls the project's directory and \texttt{FSProjectParser}, that given a list of path to Java files creates an in-memory representation of the project, with easy to use methods to parse the corpus of the files.
+
+\paragraph{Source code preprocessing}
+After parsing, we process each code element as we did with the review pipeline.
+We split composed identifiers, such as camelCase and snake\_case, we remove special characters, english and programming stop words and stem from each code element to produce bag of tokens which we then persist in the database, ready to be used for the linking algorithm. 
+
+%
+% LINKING
+%
+\subsection{Linking}
+The linking between the source code elements and the user reviews represents the core of \tool{}. After the previous steps of the two pipelines, we the preprocessed reviews and source code elements are retrieved from the database.
+Each two bag of words (one of each type) are compared using the Dice similarity coefficient \cite{dice1945measures}, defined as follow:
+\begin{equation*}
+	\operatorname{Dice}\left(\mathit{cluster}_{i}, \mathit{source}_{j}\right) = \frac{\left|\mathit{W}_{\mathit{cluster}_{i}} \cap \mathit{W}_{\mathit{source}_{j}}\right|}{\min\left(\left|\mathit{W}_{\mathit{cluster}_{i}}\right|, \left|\mathit{W}_{\mathit{souce}_{j}}\right|\right)}
+\end{equation*}
+where $\mathit{W}_{\mathit{cluster}_{i}}$represents the set of words contained in cluster $i$. $\mathit{W}_{\mathit{source}_{j}}$ represents the set of words contained in the source code element $j$.
+We normalize with respect to the shortest document, because user feedback is, in most cases, considerably shorter than our source code elements. Due to the normalization step, the Dice coefficient range is [0, 1].
+The tool, then, links stack traces and reviews having a Dice score higher than 0.5 (in a range between $\left[0, 1\right]$).
+The overall process is implemented in the \texttt{ChangeAdvisorLinker} class, which utilizes the \texttt{AsymmetricDiceIndex} class for the calculation of the index.

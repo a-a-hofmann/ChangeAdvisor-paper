@@ -1,0 +1,996 @@
+% Encoding: UTF-8
+
+@inproceedings{Gu:ASE15,
+  author    = {Xiaodong Gu and
+               Sunghun Kim},
+  title     = {"What Parts of Your Apps are Loved by Users?" {(T)}},
+  booktitle = {30th {IEEE/ACM} International Conference on Automated Software Engineering,
+               {ASE} 2015, Lincoln, NE, USA, November 9-13, 2015},
+  pages     = {760--770},
+  year      = {2015},
+  crossref  = {DBLP:conf/kbse/2015},
+  url       = {https://doi.org/10.1109/ASE.2015.57},
+  doi       = {10.1109/ASE.2015.57},
+  timestamp = {Thu, 15 Jun 2017 21:35:06 +0200},
+  biburl    = {http://dblp.org/rec/bib/conf/kbse/GuK15},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@incollection{DBLP:reference/ml/Ting17c,
+  author    = {Kai Ming Ting},
+  title     = {Precision and Recall},
+  booktitle = {Encyclopedia of Machine Learning and Data Mining},
+  pages     = {990--991},
+  year      = {2017},
+  crossref  = {DBLP:reference/ml/2017},
+  url       = {http://dx.doi.org/10.1007/978-1-4899-7687-1_659},
+  doi       = {10.1007/978-1-4899-7687-1_659},
+  timestamp = {Tue, 18 Apr 2017 14:33:38 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/reference/ml/Ting17c},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{SorboPAVC17,
+  author    = {Andrea Di Sorbo and
+               Sebastiano Panichella and
+               Carol V. Alexandru and
+               Corrado Aaron Visaggio and
+               Gerardo Canfora},
+  title     = {{SURF:} summarizer of user reviews feedback},
+  booktitle = {Proceedings of the 39th International Conference on Software Engineering,
+               {ICSE} 2017, Buenos Aires, Argentina, May 20-28, 2017 - Companion
+               Volume},
+  pages     = {55--58},
+  year      = {2017},
+  crossref  = {DBLP:conf/icse/2017c},
+  url       = {https://doi.org/10.1109/ICSE-C.2017.5},
+  doi       = {10.1109/ICSE-C.2017.5},
+  timestamp = {Fri, 07 Jul 2017 14:06:36 +0200},
+  biburl    = {http://dblp.org/rec/bib/conf/icse/SorboPAVC17},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{DBLP:conf/icst/MoranVBVP16,
+  author    = {Kevin Moran and
+               Mario Linares V{\'{a}}squez and
+               Carlos Bernal{-}C{\'{a}}rdenas and
+               Christopher Vendome and
+               Denys Poshyvanyk},
+  title     = {Automatically Discovering, Reporting and Reproducing Android Application
+               Crashes},
+  booktitle = {2016 {IEEE} International Conference on Software Testing, Verification
+               and Validation, {ICST} 2016, Chicago, IL, USA, April 11-15, 2016},
+  pages     = {33--44},
+  year      = {2016},
+  crossref  = {DBLP:conf/icst/2016},
+  url       = {http://dx.doi.org/10.1109/ICST.2016.34},
+  doi       = {10.1109/ICST.2016.34},
+  timestamp = {Tue, 26 Jul 2016 16:03:32 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icst/MoranVBVP16},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{MinelliL13,
+  author    = {Roberto Minelli and
+               Michele Lanza},
+  title     = {Software Analytics for Mobile Applications-Insights {\&} Lessons
+               Learned},
+  booktitle = {17th European Conference on Software Maintenance and Reengineering,
+               {CSMR} 2013, Genova, Italy, March 5-8, 2013},
+  pages     = {144--153},
+  year      = {2013},
+  crossref  = {DBLP:conf/csmr/2013},
+  url       = {https://doi.org/10.1109/CSMR.2013.24},
+  doi       = {10.1109/CSMR.2013.24},
+  timestamp = {Thu, 15 Jun 2017 21:40:51 +0200},
+  biburl    = {http://dblp.org/rec/bib/conf/csmr/MinelliL13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+
+@article{sackett1979bias,
+	title={Bias in analytic research},
+	author={Sackett, David L},
+	journal={Journal of chronic diseases},
+	volume={32},
+	number={1-2},
+	pages={51--63},
+	year={1979},
+	publisher={Elsevier}
+}
+
+@inproceedings{Panichella:2016:ITC:2884781.2884847,
+ author = {Panichella, Sebastiano and Panichella, Annibale and Beller, Moritz and Zaidman, Andy and Gall, Harald C.},
+ title = {The Impact of Test Case Summaries on Bug Fixing Performance: An Empirical Investigation},
+ booktitle = {Proceedings of the 38th International Conference on Software Engineering},
+ series = {ICSE '16},
+ year = {2016},
+ isbn = {978-1-4503-3900-1},
+ location = {Austin, Texas},
+ pages = {547--558},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2884781.2884847},
+ doi = {10.1145/2884781.2884847},
+ acmid = {2884847},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {empirical study, est case summarization, software testing},
+}
+
+
+@article{bergstra2012random,
+	title={Random search for hyper-parameter optimization},
+	author={Bergstra, James and Bengio, Yoshua},
+	journal={Journal of Machine Learning Research},
+	volume={13},
+	number={Feb},
+	pages={281--305},
+	year={2012}
+}
+
+@article{blei2003latent,
+	title={Latent dirichlet allocation},
+	author={Blei, David M and Ng, Andrew Y and Jordan, Michael I},
+	journal={Journal of machine Learning research},
+	volume={3},
+	number={Jan},
+	pages={993--1022},
+	year={2003}
+}
+
+@article{bordag2008comparison,
+	title={A comparison of co-occurrence and similarity measures as simulations of context},
+	author={Bordag, Stefan},
+	journal={Computational linguistics and intelligent text processing},
+	pages={52--63},
+	year={2008},
+	publisher={Springer}
+}
+
+@InProceedings{PanichellaDOPPL13,
+  author    = {Annibale Panichella and Bogdan Dit and Rocco Oliveto and Massimiliano Di Penta and Denys Poshyvanyk and Andrea De Lucia},
+  title     = {How to effectively use topic models for software engineering tasks? an approach based on genetic algorithms},
+  booktitle = {35th International Conference on Software Engineering, {ICSE} '13, San Francisco, CA, USA, May 18-26, 2013},
+  year      = {2013},
+  pages     = {522--531},
+  doi       = {10.1109/ICSE.2013.6606598},
+  url       = {https://doi.org/10.1109/ICSE.2013.6606598},
+  bibsource = {dblp computer science bibliography, http://dblp.org},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icse/PanichellaDOPPL13},
+  timestamp = {Sun, 04 Jun 2017 10:09:49 +0200},
+}
+
+@article{dice1945measures,
+	title={Measures of the amount of ecologic association between species},
+	author={Dice, Lee R},
+	journal={Ecology},
+	volume={26},
+	number={3},
+	pages={297--302},
+	year={1945},
+	publisher={Wiley Online Library}
+}
+
+@article{jaccard1901etude,
+	title={{\'E}tude comparative de la distribution florale dans une portion des Alpes et des Jura},
+	author={Jaccard, Paul},
+	journal={Bull Soc Vaudoise Sci Nat},
+	volume={37},
+	pages={547--579},
+	year={1901}
+}
+
+@inproceedings{Pagano:2013:UIS:2486788.2486920,
+ author = {Pagano, Dennis and Br\"{u}gge, Bernd},
+ title = {User Involvement in Software Evolution Practice: A Case Study},
+ booktitle = {Proceedings of the 2013 International Conference on Software Engineering},
+ series = {ICSE '13},
+ year = {2013},
+ isbn = {978-1-4673-3076-3},
+ location = {San Francisco, CA, USA},
+ pages = {953--962},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=2486788.2486920},
+ acmid = {2486920},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+}
+
+@article{Antoniol:tse2002,
+	Author = {G. Antoniol and G. Canfora and G. Casazza and De Lucia, A. and E. Merlo},
+	Date-Added = {2007-08-31 12:57:51 +0200},
+	Date-Modified = {2007-08-31 12:57:51 +0200},
+	Journal = {IEEE Transactions on Software Engineering},
+	Number = {10},
+	Pages = {970-983},
+	Title = {Recovering traceability links between code and documentation},
+	Volume = {28},
+	Year = {2002}} 
+
+@inproceedings{Marcus:icse2003,
+	Address = {Portland, Oregon, USA},
+	Author = {A. Marcus and J. I. Maletic},
+	Booktitle = {Proceedings of 25th International Conference on Software Engineering},
+	Date-Added = {2007-08-31 12:57:51 +0200},
+	Date-Modified = {2008-01-07 11:46:40 +0100},
+	Pages = {125-135},
+	Publisher = {IEEE CS Press},
+	Title = {Recovering Documentation-to-Source-Code Traceability Links using Latent Semantic Indexing},
+	Year = {2003}}
+
+@article{cohen1960coefficient,
+  title={A coefficient of agreement for nominal scales},
+  author={Cohen, Jacob},
+  journal={Educational and psychological measurement},
+  volume={20},
+  number={1},
+  pages={37--46},
+  year={1960},
+  publisher={Sage Publications Sage CA: Thousand Oaks, CA}
+}
+
+@INPROCEEDINGS{Guzman:2014:RE, 
+author={E. Guzman and W. Maalej}, 
+booktitle={2014 IEEE 22nd International Requirements Engineering Conference (RE)}, 
+title={How Do Users Like This Feature? A Fine Grained Sentiment Analysis of App Reviews}, 
+year={2014}, 
+pages={153-162}, 
+keywords={Internet;feature extraction;formal specification;information filtering;natural language processing;Apple App Store;Google Play Store;app developers;app reviews;app stores;downloaded apps;features extraction;fine grained sentiment analysis;fine-grained app features;natural language processing techniques;peer-conducted analysis;requirements evolution tasks;star ratings;text reviews;topic modeling techniques;user feedback;user requirements;user reviews aggregate;user reviews analyze;user reviews filter;user sentiments;Dictionaries;Educational institutions;Encoding;Feature extraction;Google;Manuals;Sentiment analysis}, 
+doi={10.1109/RE.2014.6912257}, 
+ISSN={1090-705X}, 
+month={Aug},}
+
+@article{Yen:2009,
+	author = {Yen, Show-Jane and Lee, Yue-Shi},
+	title = {Cluster-based Under-sampling Approaches for Imbalanced Data Distributions},
+	journal = {Expert Syst. Appl.},
+	issue_date = {April, 2009},
+	volume = {36},
+	number = {3},
+	month = apr,
+	year = {2009},
+	issn = {0957-4174},
+	pages = {5718--5727},
+	numpages = {10},
+	url = {http://dx.doi.org/10.1016/j.eswa.2008.06.108},
+	doi = {10.1016/j.eswa.2008.06.108},
+	acmid = {1498466},
+	publisher = {Pergamon Press, Inc.},
+	address = {Tarrytown, NY, USA},
+	keywords = {Classification, Data mining, Imbalanced data distribution, Under-sampling},
+} 
+
+@book{DBLP:reference/ml/2017,
+  editor    = {Claude Sammut and
+               Geoffrey I. Webb},
+  title     = {Encyclopedia of Machine Learning and Data Mining},
+  publisher = {Springer},
+  year      = {2017},
+  url       = {http://dx.doi.org/10.1007/978-1-4899-7687-1},
+  doi       = {10.1007/978-1-4899-7687-1},
+  isbn      = {978-1-4899-7685-7},
+  timestamp = {Tue, 18 Apr 2017 14:33:38 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/reference/ml/2017},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@ARTICLE{Khalid:2015:IEEE, 
+author={H. Khalid and E. Shihab and M. Nagappan and A. E. Hassan}, 
+journal={IEEE Software}, 
+title={What Do Mobile App Users Complain About?}, 
+year={2015}, 
+volume={32}, 
+number={3}, 
+pages={70-77}, 
+keywords={mobile computing;operating systems (computers);app crashes;app stores;ethical issues;feature requests;frequent complaints;functional errors;iOS apps;mobile App users;mobile app quality;privacy issues;quality assurance resources;user complaints;Computer applications;Computer crashes;Mobile communication;Privacy;Quality assurance;Software engineering;Software quality;Tagging;mobile applications;quality assurance;software engineering;software quality;user reviews}, 
+doi={10.1109/MS.2014.50}, 
+ISSN={0740-7459}, 
+month={May},}
+
+@book{BaezaYates:1999,
+	author = {Baeza-Yates, Ricardo A. and Ribeiro-Neto, Berthier},
+	title = {Modern Information Retrieval},
+	year = {1999},
+	isbn = {020139829X},
+	publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+	address = {Boston, MA, USA},
+} 
+
+@book{Geisser:1993,
+	author = {Geisser, Seymour},
+	title = {Predictive inference: an introduction},
+	year = {1993},
+	publisher = {Chapman \& Hall},
+	address = {New York, USA},
+} 
+
+@article{CapobiancoLOPP13,
+	author    = {Giovanni Capobianco and
+	Andrea De Lucia and
+	Rocco Oliveto and
+	Annibale Panichella and
+	Sebastiano Panichella},
+	title     = {Improving IR-based traceability recovery via noun-based indexing of
+	software artifacts},
+	journal   = {Journal of Software: Evolution and Process},
+	volume    = {25},
+	number    = {7},
+	pages     = {743--762},
+	year      = {2013}
+}
+
+@article{Mernik:2005,
+	author = {Mernik, Marjan and Heering, Jan and Sloane, Anthony M.},
+	title = {When and How to Develop Domain-specific Languages},
+	journal = {ACM Comput. Surv.},
+	issue_date = {December 2005},
+	volume = {37},
+	number = {4},
+	month = dec,
+	year = {2005},
+	issn = {0360-0300},
+	pages = {316--344},
+	numpages = {29},
+	url = {http://doi.acm.org/10.1145/1118890.1118892},
+	doi = {10.1145/1118890.1118892},
+	acmid = {1118892},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+	keywords = {Domain-specific language, application language, domain analysis, language development system},
+} 
+
+@INPROCEEDINGS{Pagano:2013:RE, 
+author={D. Pagano and W. Maalej}, 
+booktitle={2013 21st IEEE International Requirements Engineering Conference (RE)}, 
+title={User feedback in the appstore: An empirical study}, 
+year={2013}, 
+pages={125-134}, 
+keywords={Internet;formal verification;human factors;systems analysis;Apple AppStore;Google Play;application distribution platforms;feedback content;negative feedback;positive messages;requirements engineering teams;software teams;user community;Catalogs;Communities;Games;Google;Navigation;Social network services;Software;mobile requirements;user feedback;user needs}, 
+doi={10.1109/RE.2013.6636712}, 
+ISSN={1090-705X}, 
+month={July},}
+
+@INPROCEEDINGS{Kochhar:2015, 
+author={P. S. Kochhar and F. Thung and N. Nagappan and T. Zimmermann and D. Lo}, 
+booktitle={2015 IEEE 8th International Conference on Software Testing, Verification and Validation (ICST)}, 
+title={Understanding the Test Automation Culture of App Developers}, 
+year={2015}, 
+pages={1-10}, 
+keywords={mobile computing;program testing;smart phones;software development management;Android app developers;F-Droid;GitHub;Microsoft;Windows app developers;automated testing tools;executable test cases;in-house tools;open-source Android apps;smartphone applications;test automation culture;testing practices;Androids;Automation;Electronic mail;Face;Humanoid robots;Testing}, 
+doi={10.1109/ICST.2015.7102609}, 
+ISSN={2159-4848}, 
+month={April},}
+
+@INPROCEEDINGS{Joorabchi, 
+author={M. E. Joorabchi and A. Mesbah and P. Kruchten}, 
+booktitle={2013 ACM / IEEE International Symposium on Empirical Software Engineering and Measurement}, 
+title={Real Challenges in Mobile App Development}, 
+year={2013}, 
+pages={15-24}, 
+keywords={mobile computing;smart phones;grounded theory approach;mobile app development;mobile development community;mobile devices;smartphones;Androids;Companies;Humanoid robots;Interviews;Mobile communication;Smart phones;Testing;mobile app development;mobile platforms;qualitative study}, 
+doi={10.1109/ESEM.2013.9}, 
+ISSN={1949-3770}, 
+month={Oct},}
+
+@inproceedings{Tian:2015:ICSE,
+ author = {Tian, Yuan and Nagappan, Meiyappan and Lo, David and Hassan, Ahmed E.},
+ title = {What Are the Characteristics of High-rated Apps? A Case Study on Free Android Applications},
+ booktitle = {Proceedings of the 2015 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+ series = {ICSME '15},
+ year = {2015},
+ isbn = {978-1-4673-7532-0},
+ pages = {301--310},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1109/ICSM.2015.7332476},
+ doi = {10.1109/ICSM.2015.7332476},
+ acmid = {2881396},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@inproceedings{Grano:2017,
+ author = {Grano, Giovanni and Di Sorbo, Andrea and Mercaldo, Francesco and Visaggio, Corrado A. and Canfora, Gerardo and Panichella, Sebastiano},
+ title = {Android Apps and User Feedback: A Dataset for Software Evolution and Quality Improvement},
+ booktitle = {Proceedings of the 2Nd ACM SIGSOFT International Workshop on App Market Analytics},
+ series = {WAMA 2017},
+ year = {2017},
+ isbn = {978-1-4503-5158-4},
+ location = {Paderborn, Germany},
+ pages = {8--11},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/3121264.3121266},
+ doi = {10.1145/3121264.3121266},
+ acmid = {3121266},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {App Reviews, Mobile Applications, Software Maintenance and Evolution, Software Quality},
+} 
+
+
+@inproceedings{Corral:2015,
+ author = {Corral, Luis and Fronza, Ilenia},
+ title = {Better Code for Better Apps: A Study on Source Code Quality and Market Success of Android Applications},
+ booktitle = {Proceedings of the Second ACM International Conference on Mobile Software Engineering and Systems},
+ series = {MOBILESoft '15},
+ year = {2015},
+ isbn = {978-1-4799-1934-5},
+ location = {Florence, Italy},
+ pages = {22--32},
+ numpages = {11},
+ url = {http://dl.acm.org/citation.cfm?id=2825041.2825045},
+ acmid = {2825045},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {app, code, market, mobile, quality, store},
+} 
+
+@INPROCEEDINGS{icsme15:cristal, 
+author={F. Palomba and M. Linares Vasquez and G. Bavota and R. Oliveto and M. Di Penta and D. Poshyvanyk and A. De Lucia}, 
+booktitle={2015 IEEE International Conference on Software Maintenance and Evolution (ICSME)}, 
+title={User reviews matter! Tracking crowdsourced reviews to support evolution of successful apps}, 
+year={2015}, 
+pages={291-300}, 
+doi={10.1109/ICSM.2015.7332475}, 
+month={Sept},}
+
+@INPROCEEDINGS{7943294, 
+author={T. Zhang and J. Gao and J. Cheng}, 
+booktitle={2017 IEEE Symposium on Service-Oriented System Engineering (SOSE)}, 
+title={Crowdsourced Testing Services for Mobile Apps}, 
+year={2017}, 
+volume={}, 
+number={}, 
+pages={75-80}
+}
+
+@inproceedings{Machiry:2013,
+ author = {Machiry, Aravind and Tahiliani, Rohan and Naik, Mayur},
+ title = {Dynodroid: An Input Generation System for Android Apps},
+ booktitle = {Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering},
+ series = {ESEC/FSE 2013},
+ year = {2013},
+ isbn = {978-1-4503-2237-9},
+ location = {Saint Petersburg, Russia},
+ pages = {224--234},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2491411.2491450},
+ doi = {10.1145/2491411.2491450},
+ acmid = {2491450},
+ publisher = {ACM}
+} 
+
+@INPROCEEDINGS{7091287, 
+author={X. Li and Y. Jiang and Y. Liu and C. Xu and X. Ma and J. Lu}, 
+booktitle={2014 21st Asia-Pacific Software Engineering Conference}, 
+title={User Guided Automation for Testing Mobile Apps}, 
+year={2014}, 
+volume={1}, 
+number={}, 
+pages={27-34}
+}
+
+@inproceedings{Choudhary:2015,
+ author = {Choudhary, Shauvik Roy and Gorla, Alessandra and Orso, Alessandro},
+ title = {Automated Test Input Generation for Android: Are We There Yet? (E)},
+ booktitle = {Proceedings of the 2015 30th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+ series = {ASE '15},
+ year = {2015},
+ isbn = {978-1-5090-0025-8},
+ pages = {429--440},
+ numpages = {12},
+ url = {http://dx.doi.org/10.1109/ASE.2015.89},
+ doi = {10.1109/ASE.2015.89},
+ acmid = {2916273},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+} 
+
+@inproceedings{Linares-Vasquez:2015,
+ author = {Linares-V\'{a}squez, Mario and White, Martin and Bernal-C\'{a}rdenas, Carlos and Moran, Kevin and Poshyvanyk, Denys},
+ title = {Mining Android App Usages for Generating Actionable GUI-based Execution Scenarios},
+ booktitle = {Proceedings of the 12th Working Conference on Mining Software Repositories},
+ series = {MSR '15},
+ year = {2015},
+ isbn = {978-0-7695-5594-2},
+ location = {Florence, Italy},
+ pages = {111--122},
+ numpages = {12},
+ url = {http://dl.acm.org/citation.cfm?id=2820518.2820534},
+ acmid = {2820534},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+ keywords = {GUI models, mining execution traces and event logs, mobile apps, statistical language models},
+} 
+
+@inproceedings{DBLP:conf/wcre/CiurumeleaSPG17,
+  author    = {Adelina Ciurumelea and
+               Andreas Schaufelbuhl and
+               Sebastiano Panichella and
+               Harald C. Gall},
+  title     = {Analyzing reviews and code of mobile apps for better release planning},
+  booktitle = {{SANER}},
+  pages     = {91--102},
+  publisher = {{IEEE} Computer Society},
+  year      = {2017}
+}
+
+@InProceedings{SorboPASVCG16,
+  author    = {Andrea Di Sorbo and Sebastiano Panichella and Carol V. Alexandru and Junji Shimagaki and Corrado Aaron Visaggio and Gerardo Canfora and Harald C. Gall},
+  title     = {What would users change in my app? Summarizing app reviews for recommending software changes},
+  booktitle = {Proceedings of the 24th {ACM} {SIGSOFT} International Symposium on Foundations of Software Engineering, {FSE} 2016, Seattle, WA, USA, November 13-18, 2016},
+  year      = {2016},
+  pages     = {499--510},
+  doi       = {10.1145/2950290.2950299},
+  url       = {http://doi.acm.org/10.1145/2950290.2950299},
+  bibsource = {dblp computer science bibliography, http://dblp.org},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/sigsoft/SorboPASVCG16},
+  timestamp = {Tue, 22 Nov 2016 12:21:28 +0100},
+}
+
+@article{scalabrino2017listening,
+	title={Listening to the Crowd for the Release Planning of Mobile Apps},
+	author={Scalabrino, Simone and Bavota, Gabriele and Russo, Barbara and Oliveto, Rocco and Di Penta, Massimiliano},
+	journal={IEEE Transactions on Software Engineering},
+	year={2017},
+	publisher={IEEE}
+}
+
+@inproceedings{Villarroel:2016,
+ author = {Villarroel, Lorenzo and Bavota, Gabriele and Russo, Barbara and Oliveto, Rocco and Di Penta, Massimiliano},
+ title = {Release Planning of Mobile Apps Based on User Reviews},
+ booktitle = {Proceedings of the 38th International Conference on Software Engineering},
+ series = {ICSE '16},
+ year = {2016},
+ isbn = {978-1-4503-3900-1},
+ location = {Austin, Texas},
+ pages = {14--24},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2884781.2884818},
+ doi = {10.1145/2884781.2884818},
+ acmid = {2884818},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {mining software repositories, mobile apps, release planning},
+} 
+
+@article{journals/software/AmalfitanoFTTM15,
+  added-at = {2016-01-12T00:00:00.000+0100},
+  author = {Amalfitano, Domenico and Fasolino, Anna Rita and Tramontana, Porfirio and Ta, Bryan Dzung and Memon, Atif M.},
+  biburl = {https://www.bibsonomy.org/bibtex/27c5d2f57b4f550c61ef88f3e100ddc95/dblp},
+  ee = {http://doi.ieeecomputersociety.org/10.1109/MS.2014.55},
+  interhash = {1469518783a7e4c989f4d5c72ec6cf70},
+  intrahash = {7c5d2f57b4f550c61ef88f3e100ddc95},
+  journal = {IEEE Software},
+  keywords = {dblp},
+  number = 5,
+  pages = {53-59},
+  timestamp = {2016-01-13T11:45:14.000+0100},
+  title = {MobiGUITAR: Automated Model-Based Testing of Mobile Apps.},
+  url = {http://dblp.uni-trier.de/db/journals/software/software32.html#AmalfitanoFTTM15},
+  volume = 32,
+  year = 2015
+}
+
+@proceedings{DBLP:conf/icst/2016,
+  title     = {2016 {IEEE} International Conference on Software Testing, Verification
+               and Validation, {ICST} 2016, Chicago, IL, USA, April 11-15, 2016},
+  publisher = {{IEEE} Computer Society},
+  year      = {2016},
+  url       = {http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7510576},
+  isbn      = {978-1-5090-1827-7},
+  timestamp = {Tue, 26 Jul 2016 15:49:45 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/icst/2016},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Panichella:2015:1,
+ author = {Panichella, Sebastiano and Di Sorbo, Andrea and Guzman, Emitza and Visaggio, Corrado A. and Canfora, Gerardo and Gall, Harald C.},
+ title = {How Can I Improve My App? Classifying User Reviews for Software Maintenance and Evolution},
+ booktitle = {Proceedings of the 2015 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+ series = {ICSME '15},
+ year = {2015},
+ isbn = {978-1-4673-7532-0},
+ pages = {281--290},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1109/ICSM.2015.7332474},
+ doi = {10.1109/ICSM.2015.7332474},
+ acmid = {2881394},
+ address = {Washington, DC, USA},
+} 
+
+@Article{Khalid2015,
+  author   = {H. Khalid and E. Shihab and M. Nagappan and A. E. Hassan},
+  title    = {What Do Mobile App Users Complain About?},
+  journal  = {IEEE Software},
+  year     = {2015},
+  volume   = {32},
+  number   = {3},
+  month    = {May},
+  pages    = {70-77},
+  issn     = {0740-7459},
+  doi      = {10.1109/MS.2014.50},
+  keywords = {mobile computing;operating systems (computers);app crashes;app stores;ethical issues;feature requests;frequent complaints;functional errors;iOS apps;mobile App users;mobile app quality;privacy issues;quality assurance resources;user complaints;Computer applications;Computer crashes;Mobile communication;Privacy;Quality assurance;Software engineering;Software quality;Tagging;mobile applications;quality assurance;software engineering;software quality;user reviews},
+}
+
+@inproceedings{Mahmood:2014:ESE,
+ author = {Mahmood, Riyadh and Mirzaei, Nariman and Malek, Sam},
+ title = {EvoDroid: Segmented Evolutionary Testing of Android Apps},
+ booktitle = {Proceedings of the 22Nd ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+ series = {FSE 2014},
+ year = {2014},
+ isbn = {978-1-4503-3056-5},
+ location = {Hong Kong, China},
+ pages = {599--609},
+ numpages = {11},
+ url = {http://doi.acm.org/10.1145/2635868.2635896},
+ doi = {10.1145/2635868.2635896},
+ acmid = {2635896},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Android, Evolutionary Testing, Program Analysis},
+} 
+
+@INPROCEEDINGS{Harman:MSR:2012, 
+author={M. Harman and Y. Jia and Y. Zhang}, 
+booktitle={2012 9th IEEE Working Conference on Mining Software Repositories (MSR)}, 
+title={App store mining and analysis: MSR for app stores}, 
+year={2012}, 
+pages={108-111}, 
+keywords={data mining;pricing;software development management;software packages;Blackberry app store;app download;app store MSR;app store analysis;app store mining;business aspect;customer aspect;customer rating;customer review;data mining;feature information extraction;pricing;software repository mining;technical aspect;Business;Clustering algorithms;Correlation;Data mining;Feature extraction;Measurement;Software}, 
+doi={10.1109/MSR.2012.6224306}, 
+ISSN={2160-1852}, 
+month={June},}
+
+@ARTICLE{Martin:tse2017, 
+author={W. Martin and F. Sarro and Y. Jia and Y. Zhang and M. Harman}, 
+journal={IEEE Transactions on Software Engineering}, 
+title={A Survey of App Store Analysis for Software Engineering}, 
+year={2016}, 
+volume={PP}, 
+number={99}, 
+pages={1-1}, 
+keywords={Ecosystems;Google;Market research;Mobile communication;Security;Software;Software engineering;API;App Store;analysis;ecosystem;feature;mining;release planning;requirements engineering;reviews;security}, 
+doi={10.1109/TSE.2016.2630689}, 
+ISSN={0098-5589}, 
+month={},}
+
+@InProceedings{Machiry2013,
+  author    = {Machiry, Aravind and Tahiliani, Rohan and Naik, Mayur},
+  title     = {Dynodroid: An Input Generation System for Android Apps},
+  booktitle = {Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering},
+  year      = {2013},
+  series    = {ESEC/FSE 2013},
+  publisher = {ACM},
+  location  = {Saint Petersburg, Russia},
+  isbn      = {978-1-4503-2237-9},
+  pages     = {224--234},
+  doi       = {10.1145/2491411.2491450},
+  url       = {http://doi.acm.org/10.1145/2491411.2491450},
+  acmid     = {2491450},
+  address   = {New York, NY, USA},
+  keywords  = {Android, GUI testing, testing event-driven programs},
+  numpages  = {11},
+}
+
+@inproceedings{Chen:2014:AMI:2568225.2568263,
+ author = {Chen, Ning and Lin, Jialiu and Hoi, Steven C. H. and Xiao, Xiaokui and Zhang, Boshen},
+ title = {AR-miner: Mining Informative Reviews for Developers from Mobile App Marketplace},
+ booktitle = {Proceedings of the 36th International Conference on Software Engineering},
+ series = {ICSE 2014},
+ year = {2014},
+ isbn = {978-1-4503-2756-5},
+ location = {Hyderabad, India},
+ pages = {767--778},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2568225.2568263},
+ doi = {10.1145/2568225.2568263},
+ acmid = {2568263},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {User feedback, data mining, mobile application, user reviews},
+} 
+
+@INPROCEEDINGS{Nagappan:16, 
+author={M. Nagappan and E. Shihab}, 
+booktitle={2016 IEEE 23rd International Conference on Software Analysis, Evolution, and Reengineering (SANER)}, 
+title={Future Trends in Software Engineering Research for Mobile Apps}, 
+year={2016}, 
+volume={5}, 
+pages={21-32}, 
+keywords={mobile computing;software engineering;mobile apps developers;mobile devices;nonfunctional requirements;software applications;software development life-cycle;software engineering research;Feature extraction;Google;Mobile communication;Smart phones;Software;Software engineering;Mining app markets;Mobile apps}, 
+doi={10.1109/SANER.2016.88}, 
+month={March},}
+ 
+@inproceedings{Palomba2017,
+ author = {Palomba, Fabio and Salza, Pasquale and Ciurumelea, Adelina and Panichella, Sebastiano and Gall, Harald and Ferrucci, Filomena and De Lucia, Andrea},
+ title = {Recommending and Localizing Change Requests for Mobile Apps based on User Reviews},
+ booktitle = {Proceedings of the 39th International Conference on Software Engineering},
+ series = {ICSE 2017},
+ year = {2018},
+ location = {Buenos Aires, Argentina},
+ pages = {to appear},
+ publisher = {ACM}
+ } 
+ 
+ @inproceedings{Mao:sapienz,
+ author = {Mao, Ke and Harman, Mark and Jia, Yue},
+ title = {Sapienz: Multi-objective Automated Testing for Android Applications},
+ booktitle = {Proceedings of the 25th International Symposium on Software Testing and Analysis},
+ series = {ISSTA 2016},
+ year = {2016},
+ isbn = {978-1-4503-4390-9},
+ location = {Saarbr\&\#252;cken, Germany},
+ pages = {94--105},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2931037.2931054},
+ doi = {10.1145/2931037.2931054},
+ acmid = {2931054},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Android, Search-based software testing, Test generation},
+} 
+
+
+@online{TitcombTelegraph,
+ author = {James Titcomb},
+ editor = {The Telegraph},
+ title = {Mobile web usage overtakes desktop for first time},
+ howpublished = {\url{http://www.telegraph.co.uk/technology/2016/11/01/mobile-web-usage-overtakes-desktop-for-first-time/}},
+ month = nov,
+ year = {2016}
+}
+%howpublished = {\url{https://goo.gl/P7jFeF}}
+
+
+@online{fdroid,
+ author = {F-Droid},
+ howpublished = {\url{https://f-droid.org/en/}}
+}
+
+@inproceedings{Karlson:2009:WOP:1560004.1560039,
+ author = {Karlson, Amy K. and Meyers, Brian R. and Jacobs, Andy and Johns, Paul and Kane, Shaun K.},
+ title = {Working Overtime: Patterns of Smartphone and PC Usage in the Day of an Information Worker},
+ booktitle = {Proceedings of the 7th International Conference on Pervasive Computing},
+ series = {Pervasive '09},
+ year = {2009},
+ isbn = {978-3-642-01515-1},
+ location = {Nara, Japan},
+ pages = {398--405},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1007/978-3-642-01516-8_27},
+ doi = {10.1007/978-3-642-01516-8_27},
+ acmid = {1560039},
+ publisher = {Springer-Verlag},
+ address = {Berlin, Heidelberg},
+ keywords = {Mobile information work, cross-device interfaces, multiple devices},
+} 
+
+@inproceedings{Campbell:2016:UET:2901739.2901766,
+ author = {Campbell, Joshua Charles and Santos, Eddie Antonio and Hindle, Abram},
+ title = {The Unreasonable Effectiveness of Traditional Information Retrieval in Crash Report Deduplication},
+ booktitle = {Proceedings of the 13th International Conference on Mining Software Repositories},
+ series = {MSR '16},
+ year = {2016},
+ isbn = {978-1-4503-4186-8},
+ location = {Austin, Texas},
+ pages = {269--280},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2901739.2901766},
+ doi = {10.1145/2901739.2901766},
+ acmid = {2901766},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {automatic crash reporting, call stack trace, contextual information, deduplication, duplicate bug reports, duplicate crash report, free/open source software, information retrieval, software engineering},
+} 
+
+@inproceedings{Dang:2012:RMC:2337223.2337364,
+ author = {Dang, Yingnong and Wu, Rongxin and Zhang, Hongyu and Zhang, Dongmei and Nobel, Peter},
+ title = {ReBucket: A Method for Clustering Duplicate Crash Reports Based on Call Stack Similarity},
+ booktitle = {Proceedings of the 34th International Conference on Software Engineering},
+ series = {ICSE '12},
+ year = {2012},
+ isbn = {978-1-4673-1067-3},
+ location = {Zurich, Switzerland},
+ pages = {1084--1093},
+ numpages = {10},
+ url = {http://dl.acm.org/citation.cfm?id=2337223.2337364},
+ acmid = {2337364},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+} 
+
+@article{zhang_challenges_2005,
+  journal = {International Journal of {Human-Computer} Interaction},
+  keywords = {imported mobile usability},
+  number = 3,
+  pages = {293-308},
+  title = {Challenges, methodologies, and issues in the usability testing of mobile applications},
+  volume = 18,
+  year = 2005
+}
+
+@InProceedings{Ciurumelea2017,
+  author    = {Adelina Ciurumelea and Andreas Schaufelbuhl and Sebastiano Panichella and Harald C. Gall},
+  title     = {Analyzing reviews and code of mobile apps for better release planning},
+  booktitle = {{IEEE} 24th International Conference on Software Analysis, Evolution and Reengineering, {SANER} 2017, Klagenfurt, Austria, February 20-24, 2017},
+  year      = {2017},
+  editor    = {Martin Pinzger and Gabriele Bavota and Andrian Marcus},
+  publisher = {{IEEE} Computer Society},
+  pages     = {91--102},
+  doi       = {10.1109/SANER.2017.7884612},
+  url       = {http://dx.doi.org/10.1109/SANER.2017.7884612},
+  bibsource = {dblp computer science bibliography, http://dblp.org},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/wcre/CiurumeleaSPG17},
+  timestamp = {Tue, 28 Mar 2017 11:37:52 +0200},
+}
+
+
+
+@TECHREPORT{DevRelate,
+				author = {Evans Data Corporation}, 
+				title = {Global Development Population and Demographics Study}, 
+				institution = {goo.gl/SKelVs}, 
+				year = {2016}
+				}
+
+@article{Choi:2013:GGT,
+ author = {Choi, Wontae and Necula, George and Sen, Koushik},
+ title = {Guided GUI Testing of Android Apps with Minimal Restart and Approximate Learning},
+ journal = {SIGPLAN Not.},
+ issue_date = {October 2013},
+ volume = {48},
+ number = {10},
+ month = oct,
+ year = {2013},
+ issn = {0362-1340},
+ pages = {623--640},
+ numpages = {18},
+ url = {http://doi.acm.org/10.1145/2544173.2509552},
+ doi = {10.1145/2544173.2509552},
+ acmid = {2509552},
+ keywords = {android, automata, gui testing, learning},
+} 
+
+@inproceedings{Maji:2010:CFM:1913797.1914381,
+ author = {Maji, Amiya Kumar and Hao, Kangli and Sultana, Salmin and Bagchi, Saurabh},
+ title = {Characterizing Failures in Mobile OSes: A Case Study with Android and Symbian},
+ booktitle = {Proceedings of the 2010 IEEE 21st International Symposium on Software Reliability Engineering},
+ series = {ISSRE '10},
+ year = {2010},
+ isbn = {978-0-7695-4255-3},
+ pages = {249--258},
+ numpages = {10},
+ url = {http://dx.doi.org/10.1109/ISSRE.2010.45},
+ doi = {10.1109/ISSRE.2010.45},
+ acmid = {1914381},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
+ keywords = {smartphone, reliability, root cause, bug fix, customizability},
+}
+
+@inproceedings{Hu:2011,
+ author = {Hu, Cuixiong and Neamtiu, Iulian},
+ title = {Automating GUI Testing for Android Applications},
+ booktitle = {Proceedings of the 6th International Workshop on Automation of Software Test},
+ series = {AST '11},
+ year = {2011},
+ isbn = {978-1-4503-0592-1},
+ location = {Waikiki, Honolulu, HI, USA},
+ pages = {77--83},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/1982595.1982612},
+ doi = {10.1145/1982595.1982612},
+ acmid = {1982612},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {empirical bug studies, google android, gui testing, mobile applications, test automation, test case generation},
+} 
+
+
+@inproceedings{Moran:2016:FBR:2889160.2889269,
+ author = {Moran, Kevin and Poshyvanyk, Denys},
+ title = {Fixing Bug Reporting for Mobile and GUI-based Applications},
+ booktitle = {Proceedings of the 38th International Conference on Software Engineering Companion},
+ series = {ICSE '16},
+ year = {2016},
+ isbn = {978-1-4503-4205-6},
+ location = {Austin, Texas},
+ pages = {831--834},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/2889160.2889269},
+ doi = {10.1145/2889160.2889269},
+ acmid = {2889269},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@inproceedings{Muccini:2012,
+ author = {Muccini, Henry and Di Francesco, Antonio and Esposito, Patrizio},
+ title = {Software Testing of Mobile Applications: Challenges and Future Research Directions},
+ booktitle = {Proceedings of the 7th International Workshop on Automation of Software Test},
+ series = {AST '12},
+ year = {2012},
+ isbn = {978-1-4673-1822-8},
+ location = {Zurich, Switzerland},
+ pages = {29--35},
+ numpages = {7},
+ url = {http://dl.acm.org/citation.cfm?id=2663608.2663615},
+ acmid = {2663615},
+ publisher = {IEEE Press},
+ address = {Piscataway, NJ, USA},
+}
+
+@Book{Baeza-Yates1999,
+  author    = {Baeza-Yates, Ricardo A. and Ribeiro-Neto, Berthier},
+  title     = {Modern Information Retrieval},
+  year      = {1999},
+  publisher = {Addison-Wesley Longman Publishing Co., Inc.},
+  isbn      = {020139829X},
+  address   = {Boston, MA, USA},
+}
+
+@online{business,
+ author = {Business of Apps},
+ title = {There are 12 million mobile developers worldwide, and nearly half develop for Android first},
+ howpublished = {\url{https://goo.gl/RNCSHC}}
+}
+
+@online{n-gram,
+ author = {Wikipedia},
+ title = {N-grams},
+ howpublished = {\url{https://en.wikipedia.org/wiki/N-gram}}
+}
+
+@online{Scikitlearn:F1-Score,
+ author = {Scikitlearn},
+ title = {F1 Score},
+ howpublished = {\url{http://http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html}}
+}
+
+@article{Vasquez:2017kj,
+author = {V{\'a}squez, Mario Linares and Bavota, Gabriele and Tufano, Michele and Moran, Kevin and Di Penta, Massimiliano and Vendome, Christopher and Bernal-C{\'a}rdenas, Carlos and Poshyvanyk, Denys},
+title = {{Enabling mutation testing for Android apps.}},
+journal = {ESEC/SIGSOFT FSE},
+year = {2017},
+pages = {233--244}
+}
+
+@inproceedings{Su:2017:fse,
+ author = {Su, Ting and Meng, Guozhu and Chen, Yuting and Wu, Ke and Yang, Weiming and Yao, Yao and Pu, Geguang and Liu, Yang and Su, Zhendong},
+ title = {Guided, Stochastic Model-based GUI Testing of Android Apps},
+ booktitle = {Proceedings of the 2017 11th Joint Meeting on Foundations of Software Engineering},
+ series = {ESEC/FSE 2017},
+ year = {2017},
+ isbn = {978-1-4503-5105-8},
+ location = {Paderborn, Germany},
+ pages = {245--256},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/3106237.3106298},
+ doi = {10.1145/3106237.3106298},
+ acmid = {3106298},
+ keywords = {GUI Testing, Mobile Apps, Model-based Testing},
+}
+{sanerGrano18,
+  author    = {Anonymous},
+  title     = {Hidden title for double-blind review},
+  booktitle = {},
+%  publisher = {{IEEE} Computer Society},
+  year      = {to appear}
+} 
+
+@misc{appendix,
+ title = {becloma-website},
+ originalyear = {12.01.2018},
+ howpublished = {\url{http://165.227.112.128/}}
+}
+
+@InProceedings{panichella2016ardoc,
+  author       = {Panichella, Sebastiano and Di Sorbo, Andrea and Guzman, Emitza and Visaggio, Corrado A and Canfora, Gerardo and Gall, Harald C},
+  title        = {Ardoc: App reviews development oriented classifier},
+  booktitle    = {Proceedings of the 2016 24th ACM SIGSOFT International Symposium on Foundations of Software Engineering},
+  year         = {2016},
+  organization = {ACM},
+  pages        = {1023--1027},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

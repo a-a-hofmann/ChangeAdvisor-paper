@@ -1,0 +1,130 @@
+\documentclass[conference]{IEEEtran}
+\input{macro}
+\usepackage{cite}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{graphicx, color}                       
+\usepackage[usenames,dvipsnames]{xcolor}        
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}\setlength{\parindent}{0in}
+\usepackage{paralist}               
+\usepackage{tabularx,ragged2e}                            
+\usepackage{balance}                          
+\usepackage{multirow}     
+\usepackage{multicol}            
+\usepackage{fancyvrb}       
+\usepackage[TABBOTCAP]{subfigure}                         
+\usepackage{tikz}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{bm}
+\usepackage{epstopdf}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{dblfloatfix}    % To enable figures at the bottom of page
+  
+\newcommand{\ie}{\emph{i.e.},\xspace}
+\newcommand{\Ie}{\emph{I.e.},\xspace}
+\newcommand{\eg}{\emph{e.g.},\xspace}
+\newcommand{\Eg}{\emph{E.g.},\xspace}
+\newcommand{\etal}{\emph{et al.}\xspace}
+
+\newcommand\Giovanni[1]{\textbf{Giovanni}{#1}}
+\newcommand\Adelina[1]{\textbf{Adelina}{#1}}
+\newcommand\Fabio[1]{\textbf{Fabio}{#1}}
+\newcommand\Sebastiano[1]{\textbf{Sebastiano}{#1}}
+\newcommand\Lucas[1]{\textbf{Lucas}{#1}}
+
+\newcommand{\sapienz}[0]{\textsc{Sapienz~}}
+\newcommand{\monkey}[0]{\textsc{Monkey~}}
+\newcommand{\tool}[0]{\textsc{ChangeAdvisor}}
+
+\renewcommand{\arraystretch}{1.2}
+
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+% === Per gli snippet =====================================
+\lstset{
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\large,        		   % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={},			   % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+%  language=Python,                 % the language of the code
+  morekeywords={},            	   % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  basicstyle=\scriptsize,
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+  belowskip=1.0em,				   % sets the vertical space below	
+  aboveskip=0.8em   		       % sets the vertical space above
+}
+
+\begin{document}
+
+\title{ChangeAdvisor: A Change Requests Recommender Based on Android User Reviews}
+
+%\author{\IEEEauthorblockN{Lucas Pelloni, Giovanni Grano,
+%Adelina Ciurumelea \\ Sebastiano Panichella, Fabio Palomba and
+%Harald C. Gall}
+%\IEEEauthorblockA{University of Zurich,\\
+%Department of Informatics, Switzerland\\
+%lucas.pelloni@uzh.ch, \{grano,ciurumelea,panichella,palomba,gall\}@ifi.uzh.ch}}
+
+\maketitle
+\begin{abstract}
+Android user reviews often contain precious information that can be profitably used to guide software maintenance activities. Nevertheless, because of their high frequency and lack of textual structure, analyzing the user feedback may result in a problematic and manual effort. In this paper, we describe ChangeAdvisor, a tool that (i) examines the structure, semantics, and sentiments of user reviews to distill change requests to be addressed; (ii) then, it leverages information retrieval approaches to localize the code artifacts that need to be changed. The quantitative and qualitative evaluation of ChangeAdvisor, involving 10 open source mobile apps and their original developers, showed a high accuracy of the presented tool in (i) distilling and clustering user change requests and (ii) linking the source code components that need to be changed to accomodate such requests. In evaluating ChangeAdvisor we found that the original developers of the analyzed apps confirm the practical usefulness of the provided software change recommendations.
+\end{abstract}
+
+\begin{IEEEkeywords}
+\footnotesize
+Mobile Applications, User Reviews Analysis
+\end{IEEEkeywords}
+
+% Introduction
+\section{Introduction}
+\label{sec:intro}
+\input{intro} 
+
+% Design
+\section{\tool{}} 
+%\section{Approach}
+\label{sec:design}
+\input{design}
+
+% Evaluation
+\section{Evaluation}
+\label{sec:evaluation}
+\input{evaluation}
+
+
+% Demo Remarks
+\section{Demo Remarks}
+\label{sec:remarks}
+\input{conclusions}
+
+%\newpage
+%\balance
+\bibliographystyle{abbrv}
+\bibliography{biblio}  
+
+\end{document}
