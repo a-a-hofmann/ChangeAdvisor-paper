@@ -993,4 +993,57 @@ pages = {233--244}
   pages        = {1023--1027},
 }
 
+@InProceedings{teh2005sharing,
+  author    = {Teh, Yee W and Jordan, Michael I and Beal, Matthew J and Blei, David M},
+  title     = {Sharing clusters among related groups: Hierarchical Dirichlet processes},
+  booktitle = {Advances in neural information processing systems},
+  year      = {2005},
+  pages     = {1385--1392},
+}
+
+@Article{inukollu2014factors,
+  author  = {Inukollu, Venkata N and Keshamoni, Divya D and Kang, Taeghyun and Inukollu, Manikanta},
+  title   = {Factors influencing quality of mobile apps: Role of mobile app development life cycle},
+  journal = {arXiv preprint arXiv:1410.4537},
+  year    = {2014},
+}
+
+@InProceedings{iacob2013retrieving,
+  author       = {Iacob, Claudia and Harrison, Rachel},
+  title        = {Retrieving and analyzing mobile apps feature requests from online reviews},
+  booktitle    = {Proceedings of the 10th Working Conference on Mining Software Repositories},
+  year         = {2013},
+  organization = {IEEE Press},
+  pages        = {41--44},
+}
+
+@InProceedings{galvis2013analysis,
+  author       = {Galvis Carre{\~n}o, Laura V and Winbladh, Kristina},
+  title        = {Analysis of user comments: an approach for software requirements evolution},
+  booktitle    = {Proceedings of the 2013 International Conference on Software Engineering},
+  year         = {2013},
+  organization = {IEEE Press},
+  pages        = {582--591},
+}
+
+@Article{abelein2013does,
+  author    = {Abelein, Ulrike and Sharp, Helen and Paech, Barbara},
+  title     = {Does involving users in software development really influence system success?},
+  journal   = {IEEE software},
+  year      = {2013},
+  volume    = {30},
+  number    = {6},
+  pages     = {17--23},
+  publisher = {IEEE},
+}
+
+@InProceedings{panichella2015can,
+  author       = {Panichella, Sebastiano and Di Sorbo, Andrea and Guzman, Emitza and Visaggio, Corrado A and Canfora, Gerardo and Gall, Harald C},
+  title        = {How can i improve my app? classifying user reviews for software maintenance and evolution},
+  booktitle    = {Software maintenance and evolution (ICSME), 2015 IEEE international conference on},
+  year         = {2015},
+  organization = {IEEE},
+  pages        = {281--290},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

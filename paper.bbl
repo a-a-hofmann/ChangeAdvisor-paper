@@ -1,9 +1,69 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{abelein2013does}
+U.~Abelein, H.~Sharp, and B.~Paech.
+\newblock Does involving users in software development really influence system
+  success?
+\newblock {\em IEEE software}, 30(6):17--23, 2013.
 
 \bibitem{dice1945measures}
 L.~R. Dice.
 \newblock Measures of the amount of ecologic association between species.
 \newblock {\em Ecology}, 26(3):297--302, 1945.
+
+\bibitem{galvis2013analysis}
+L.~V. Galvis~Carre{\~n}o and K.~Winbladh.
+\newblock Analysis of user comments: an approach for software requirements
+  evolution.
+\newblock In {\em Proceedings of the 2013 International Conference on Software
+  Engineering}, pages 582--591. IEEE Press, 2013.
+
+\bibitem{Grano:2017}
+G.~Grano, A.~Di~Sorbo, F.~Mercaldo, C.~A. Visaggio, G.~Canfora, and
+  S.~Panichella.
+\newblock Android apps and user feedback: A dataset for software evolution and
+  quality improvement.
+\newblock In {\em Proceedings of the 2Nd ACM SIGSOFT International Workshop on
+  App Market Analytics}, WAMA 2017, pages 8--11, New York, NY, USA, 2017. ACM.
+
+\bibitem{Guzman:2014:RE}
+E.~Guzman and W.~Maalej.
+\newblock How do users like this feature? a fine grained sentiment analysis of
+  app reviews.
+\newblock In {\em 2014 IEEE 22nd International Requirements Engineering
+  Conference (RE)}, pages 153--162, Aug 2014.
+
+\bibitem{Harman:MSR:2012}
+M.~Harman, Y.~Jia, and Y.~Zhang.
+\newblock App store mining and analysis: Msr for app stores.
+\newblock In {\em 2012 9th IEEE Working Conference on Mining Software
+  Repositories (MSR)}, pages 108--111, June 2012.
+
+\bibitem{iacob2013retrieving}
+C.~Iacob and R.~Harrison.
+\newblock Retrieving and analyzing mobile apps feature requests from online
+  reviews.
+\newblock In {\em Proceedings of the 10th Working Conference on Mining Software
+  Repositories}, pages 41--44. IEEE Press, 2013.
+
+\bibitem{inukollu2014factors}
+V.~N. Inukollu, D.~D. Keshamoni, T.~Kang, and M.~Inukollu.
+\newblock Factors influencing quality of mobile apps: Role of mobile app
+  development life cycle.
+\newblock {\em arXiv preprint arXiv:1410.4537}, 2014.
+
+\bibitem{oh2013facilitating}
+J.~Oh, D.~Kim, U.~Lee, J.-G. Lee, and J.~Song.
+\newblock Facilitating developer-user interactions with mobile app review
+  digests.
+\newblock In {\em CHI'13 Extended Abstracts on Human Factors in Computing
+  Systems}, pages 1809--1814. ACM, 2013.
+
+\bibitem{Pagano:2013:RE}
+D.~Pagano and W.~Maalej.
+\newblock User feedback in the appstore: An empirical study.
+\newblock In {\em 2013 21st IEEE International Requirements Engineering
+  Conference (RE)}, pages 125--134, July 2013.
 
 \bibitem{Palomba2017}
 F.~Palomba, P.~Salza, A.~Ciurumelea, S.~Panichella, H.~Gall, F.~Ferrucci, and
@@ -12,6 +72,14 @@ F.~Palomba, P.~Salza, A.~Ciurumelea, S.~Panichella, H.~Gall, F.~Ferrucci, and
   user reviews.
 \newblock In {\em Proceedings of the 39th International Conference on Software
   Engineering}, ICSE 2017, page to appear. ACM, 2018.
+
+\bibitem{panichella2015can}
+S.~Panichella, A.~Di~Sorbo, E.~Guzman, C.~A. Visaggio, G.~Canfora, and H.~C.
+  Gall.
+\newblock How can i improve my app? classifying user reviews for software
+  maintenance and evolution.
+\newblock In {\em Software maintenance and evolution (ICSME), 2015 IEEE
+  international conference on}, pages 281--290. IEEE, 2015.
 
 \bibitem{panichella2016ardoc}
 S.~Panichella, A.~Di~Sorbo, E.~Guzman, C.~A. Visaggio, G.~Canfora, and H.~C.

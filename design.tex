@@ -1,15 +1,26 @@
 This section briefly describes the approach and technologies we employed. 
 \tool{} is a tool built with a set of different technologies: the core part, the back-end, is written in Java while the front-end application is written in React.
 This section reports the main characteristics of \tool{}, as well as details about its architecture and inner-working.
+
+\subsection{Approach Overview}
+The \tool{} approach was first introduced by Palomba \textit{et. al}~\cite{Palomba2017}. The goal is to extract feedback relevant to software maintenance tasks from user reviews and suggest locations in code where improvements should be made. 
+It consists of 4 main steps:
+\begin{itemize}
+\item user feedback classification (i.e. bug fixing, feature requests and enhancements);
+\item source code and user feedback preprocessing;
+\item user feedback clustering to create groups of reviews discussing the same changes;
+\item determining code elements related to the reviews clusters.
+\end{itemize}
+
 %
 % DESIGN GOALS
 %
 \subsection{Design Goals}
-\tool{} is designed with the main goal to link user feedback, discussing changes in a high-level language, such as feature requests and bug reports, to the source code components that will require modification in order to fulfill said change requests.
-In order to support this goal, \tool{} includes a user-interface in the form of a web application, which the developers can use to easily import user reviews and source code. Additionally, they can update \tool{}'s configuration, start jobs manually, and view a dashboard which includes information such as a timeseries of number of reviews vs. average of reviews, distribution of reviews based on the category given by \texttt{Ardoc}~\cite{panichella2016ardoc} (e.g. FEATURE REQUEST, PROBLEM DISCOVERY, INFORMATION GIVING, etc.), and labels representing the various review clusters.
+%\tool{} is designed with the main goal to link user feedback, discussing changes in a high-level language, such as feature requests and bug reports, to the source code components that will require modification in order to fulfill said change requests.
+The newest iteration of \tool{} was devised to improve performance and usability. In order to support this goal, \tool{} leverages a database to cache computation results and improve search performance. It includes a user-interface in the form of a web application, which developers can use to easily import user reviews and source code. For reasons of space, screenshots of the user interface can be found on the tool's web page.
+In addition, it is also possible to update \tool{}'s configuration, start jobs manually, and view a dashboard which includes information such as a timeseries of number of reviews vs. average of reviews, distribution of reviews based on category and labels representing the various review clusters.
 
-Both a review miner and a tool to more easily import source code from repositories (at the moment only git is supported, but others will be added at a later date) were added, both of which can be configured and started through the UI.
-Since the review miner is heavily dependent on the format of the Google Play Store, updates to the store might risk breaking the miner, and thus the possibility to import reviews from the file system is also present.
+Tools to import source code and user feedback are provided. Source code can be imported from repositories (at the moment only git is supported, but others will be added at a later date). Review data can be imported in two ways: (i) via a review miner; (ii) from the file system. All import tools can be configured and started through the UI.
 
 %
 % ARCHITECTURE
@@ -24,34 +35,41 @@ Since the review miner is heavily dependent on the format of the Google Play Sto
 \subsection{\tool{} Architecture}
 The overall architecture of \tool{} is depicted in Figure \ref{fig:architecture}.
 As mentioned previously, the tool is divided in a client-side application and a back-end.
+
+The back-end represents the core of \tool{}. The entirety of the logic is implemented at this level. On a logical level, this system can be divided in three components: (i) the \textit{Review Pipeline} that handles the import and preprocessing of user feedback; (ii) the \textit{Source Code Pipeline} which imports source code and preprocessing of source code components; (iii) the \textit{Linking}, which represents the core feature of the \tool{} approach, i.e. the link between the source code component and the user feedback referring such elements.
+
+
+
 The back-end was written in Java upon Spring Boot and fully leverages the Spring Framework: Spring REST for the HTTP API; Spring Data for database access; Spring Batch for long running jobs. 
 The front-end was written in React and communicates with the back-end via the aforementioned API.
 Given that most processes of \tool{} are long running, we leverage the database to persist the results of the various steps of the tool in order to never have to recompute previous results. Additionally, we leverage the database for costly search and aggregation operations.
 
-The back-end represents the core of \tool{}. The entirety of the logic is implemented at this level. On a logical level, this system can be divided in three components: (i) the \textit{Review Pipeline} that handles the import and preprocessing of user feedback; (ii) the \textit{Source Code Pipeline} which imports source code and preprocessing of source code components; (iii) the \textit{Linking}, which represents the core feature of the \tool{} approach, i.e. the link between the source code component and the user feedback refering such elements. The upcoming sections will further detail both front- as well as back-end and their composing components.
+%The back-end represents the core of \tool{}. The entirety of the logic is implemented at this level. On a logical level, this system can be divided in three components: (i) the \textit{Review Pipeline} that handles the import and preprocessing of user feedback; (ii) the \textit{Source Code Pipeline} which imports source code and preprocessing of source code components; (iii) the \textit{Linking}, which represents the core feature of the \tool{} approach, i.e. the link between the source code component and the user feedback refering such elements.
+
+The upcoming sections will further detail both front- as well as back-end and their composing components.
 
 %
 % The Review SUBSYSTEM
 %
-\subsection{The Review Pipeline}
+\subsection{The Review Subsystem}
 
-The aim of this subsystem is to facilitate in the fetching and processing of user feedback into clusters that can then be used as input for the linking algorithm.
+%The aim of this subsystem is to facilitate the fetching and processing of user feedback into clusters that can then be used as input for the linking algorithm.
 
-This system can logically be seen as a sequence of four steps: (i) review import which can be configured based on a schedule to automatically mine user reviews; (ii) the review classification step where we process reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT} using a feedback classifier~\cite{panichella2016ardoc}; (iii) the review preprocessing step in order to clean the user feedback from noise; (iv) the clustering step which groups together user reviews discussing the same change request.
+This system can logically be seen as a sequence of four steps: (i) review import which can be configured based on a schedule to automatically mine user reviews; (ii) the review classification step where we automatically classify reviews using a feedback classifier, into labeled categories representing whether a review represents a feature request (\texttt{FEATURE REQUEST}) or a bug request (\texttt{BUG REQUEST)}; (iii) the review preprocessing step in order to clean the user feedback from textual noise which might hinder the accuracy of the clustering and linking~\cite{Palomba2017}; (iv) the clustering step which groups together user reviews discussing the same change request.
 
 \paragraph{Review import} 
-\tool{} relies for the first step on an external tool, a Java-built scraper tool that relies on PhantomJS\footnote{\url{http://phantomjs.org}} and Selenium\footnote{\url{http://www.seleniumhq.org}} to navigate to and extract the reviews from the Google Play Store.
+\tool{} relies for the first step on an external tool, a Java-built scraper tool~\cite{Grano:2017} that relies on PhantomJS\footnote{\url{http://phantomjs.org}} and Selenium\footnote{\url{http://www.seleniumhq.org}} to navigate to and extract the reviews from the Google Play Store.
 %In order to do so, \tool{} extends the \texttt{Extractor} interface of the crawler to add the option of tracking progress. This task can then be started on a separate thread.
 
 \paragraph{Review classification}
-Once the reviews are mined, we employ another external tool, a review classifier~\cite{panichella2016ardoc} which uses Natural Language Processing (NLP), Sentiment and Text Analysis (SA \& TA) in order to process the reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT}. We do this to discern the ones that are useful for linking later on.
+Once the reviews are mined, we employ another external tool, a review classifier~\cite{panichella2016ardoc} which uses Natural Language Processing (NLP), Sentiment and Text Analysis (SA \& TA)~\cite{panichella2016ardoc} in order to process the reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT}. We do this to discern the ones that are useful for linking later on.
 
 \paragraph{Preprocessing}
-To prepare the reviews for clustering, we apply the typical NLP noise removal steps: contraction expansion, stopword removal, and stemming. This results in a collection of bag of words which can then be used as input to a clustering algorithm.
+To prepare the reviews for clustering, we apply the typical NLP noise removal steps: contraction expansion, stopword removal, and stemming~\cite{Palomba2017}. This results in a collection of bag of words which can then be used as input to a clustering algorithm.
 
 \paragraph{Clustering}
-The goal of this step is to build clusters of reviews discussing the same change requests. Ideally, at the end of this step we have groups of reviews semantically similar to each other. These clusters will then be fed to the core feature of \tool{}, the linking algorithm, as one of the inputs. We use clustering for two reasons: (i) as has been shown in the work of Palomba \textit{et al.}~\cite{Palomba2017} linking single reviews tends to return poor results, and (ii) clustering allows us to group together feedback referring ideally to the same, or at the very least, similar change request, thus avoiding duplicates and making the system more comprehensible and generally easier to follow for the developer. \tool{} tries two separate approaches to clustering. As with the original \tool{} paper~\cite{Palomba2017} we use Hierarchical Dirichlet Process (HDP), proposed by Teh \textit{et al.}~\cite{teh2005sharing}. HDP is an extension of the LDA algorithm where the number of topics is not known a priori. The \texttt{HierarchicalDirichletProcess} class implementing this approach, is a Java port of the \texttt{hdpla} python script that was used in the \tool{} paper~\cite{Palomba2017}.
-Additionally, we attempt to create clusters by computing the \textit{Term-frequency inverse-document-frequency} (tf-idf) score over the N-grams of all reviews, and then picking the N-grams with the highest score and fetching all reviews containing said N-gram. This functionality is implemented in the \texttt{ReviewAggregationService} class.
+The goal of this step is to build clusters of reviews discussing the same change requests. Ideally, at the end of this step we have groups of reviews semantically similar to each other. These clusters will then be fed to the linking algorithm, as one of the inputs. We use clustering for two reasons: (i) as has been shown in the work of Palomba \textit{et al.}~\cite{Palomba2017} linking single reviews tends to return poor results, and (ii) clustering allows us to group together feedback referring ideally to the same, or at the very least, similar change request, thus avoiding duplicates and making the system more comprehensible and generally easier to follow for the developer. \tool{} performs two separate approaches to clustering. As with the original \tool{} paper~\cite{Palomba2017} we use Hierarchical Dirichlet Process (HDP), proposed by Teh \textit{et al.}~\cite{teh2005sharing}. HDP is an extension of the LDA algorithm where the number of topics is not known a priori. The \texttt{HierarchicalDirichletProcess} class implementing this approach, is a Java port of the \texttt{hdpla} python script that was used in the \tool{} paper~\cite{Palomba2017}.
+Additionally, we attempt to create clusters by computing the \textit{Term-frequency inverse-document-frequency} (tf-idf) score over the N-grams of all reviews, and then picking the N-grams with the highest score and fetching all reviews containing said N-gram. 
 
 Regardless of the clustering technique employed, at the end, we will have a set of processed reviews that we can use for linking. The return types of both clustering algorithms implement the \texttt{LinkableReview} interface, allowing the linker to use any of the two. Finally, both outputs are persisted to the database. By doing this, we do not need to compute new clusters each time we want to run the \textit{linker}. The clusters are only recomputed when new reviews are imported into \tool{}.
 
@@ -63,7 +81,7 @@ Regardless of the clustering technique employed, at the end, we will have a set 
 The goal of this subsystem is to provide an easy to use interface to automatically import and process source code into a format that \tool{} can use as input to its linking algorithm. 
 \paragraph{Source code import} 
 Via the web interface a user can easily enter the url of the git repository. \tool{} will then automatically clone the repository, parse the code and divide it in its elements. We define a \textit{source code element} as the basic building blocks of an application, i.e. a \textit{class} in Java. We only keep classes (normal, nested and static nested) and enums. We discards interfaces as they do not implement any logic and would thus rarely be targets for change requests.
-For each \textit{source code element} we parse its public API and comments. This is achieved mainly in two classes: \texttt{DirectoryCrawler}, which recursively crawls the project's directory and \texttt{FSProjectParser}, that given a list of path to Java files creates an in-memory representation of the project, with easy to use methods to parse the corpus of the files.
+For each \textit{source code element}, we parse its public API and comments. 
 
 \paragraph{Source code preprocessing}
 After parsing, we process each code element as we did with the review pipeline.
