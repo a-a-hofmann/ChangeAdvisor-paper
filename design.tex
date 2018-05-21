@@ -59,16 +59,19 @@ This system can logically be seen as a sequence of four steps: (i) review import
 
 \paragraph{Review import} 
 \tool{} relies for the first step on an external tool, a Java-built scraper tool~\cite{Grano:2017} that relies on PhantomJS\footnote{\url{http://phantomjs.org}} and Selenium\footnote{\url{http://www.seleniumhq.org}} to navigate to and extract the reviews from the Google Play Store.
-%In order to do so, \tool{} extends the \texttt{Extractor} interface of the crawler to add the option of tracking progress. This task can then be started on a separate thread.
 
 \paragraph{Review classification}
 Once the reviews are mined, we employ another external tool, a review classifier~\cite{panichella2016ardoc} which uses Natural Language Processing (NLP), Sentiment and Text Analysis (SA \& TA)~\cite{panichella2016ardoc} in order to process the reviews into categories such as \textit{FEATURE REQUEST} and \textit{BUG REPORT}. We do this to discern the ones that are useful for linking later on.
 
 \paragraph{Preprocessing}
-To prepare the reviews for clustering, we apply the typical NLP noise removal steps: contraction expansion, stopword removal, and stemming~\cite{Palomba2017}. This results in a collection of bag of words which can then be used as input to a clustering algorithm.
+Since user feedback tends to be rather informal and noisy~\cite{Mernik:2005}, we first processes them into a suitable format for textual analysis. Thus, to prepare the reviews for clustering, we apply the following NLP noise removal steps: contraction expansion, stopword removal, and stemming~\cite{Palomba2017}. We then remove all documents which are too short, to clearly convey a change request. This results in a collection of bag of words which can then be used as input to a clustering algorithm.
 
 \paragraph{Clustering}
-The goal of this step is to build clusters of reviews discussing the same change requests. Ideally, at the end of this step we have groups of reviews semantically similar to each other. These clusters will then be fed to the linking algorithm, as one of the inputs. We use clustering for two reasons: (i) as has been shown in the work of Palomba \textit{et al.}~\cite{Palomba2017} linking single reviews tends to return poor results, and (ii) clustering allows us to group together feedback referring ideally to the same, or at the very least, similar change request, thus avoiding duplicates and making the system more comprehensible and generally easier to follow for the developer. \tool{} performs two separate approaches to clustering. As with the original \tool{} paper~\cite{Palomba2017} we use Hierarchical Dirichlet Process (HDP), proposed by Teh \textit{et al.}~\cite{teh2005sharing}. HDP is an extension of the LDA algorithm where the number of topics is not known a priori. The \texttt{HierarchicalDirichletProcess} class implementing this approach, is a Java port of the \texttt{hdpla} python script that was used in the \tool{} paper~\cite{Palomba2017}.
+The goal of this step is to build clusters of reviews discussing the same change requests. Consider the following example of two reviews discussing the same problem, taken verbatim from the reviews of \textit{AnkiDroid Flashcards}~\footnote{AnkiDroid Flashcards: \url{https://play.google.com/store/apps/details?id=com.ichi2.anki&hl=en}}: \begin{enumerate}
+\item  Crashing constantly It's crashing when I try to take a photograph for a flash card, has been for weeks, going to uninstall it. […]
+\item Hi guys. The app is great, but when i want to add image to the answer through cammera it crashes. […]
+\end{enumerate}
+Ideally, at the end of this step we have groups of reviews semantically similar to each other. These clusters will then be fed to the linking algorithm, as one of the inputs. We use clustering for two reasons: (i) as has been shown in the work of Palomba \textit{et al.}~\cite{Palomba2017} linking single reviews tends to return poor results, and (ii) clustering allows us to group together feedback referring ideally to the same, or at the very least, similar change request, thus avoiding duplicates and making the system more comprehensible and generally easier to follow for the developer. \tool{} performs two separate approaches to clustering. As with the original \tool{} paper~\cite{Palomba2017} we use Hierarchical Dirichlet Process (HDP), proposed by Teh \textit{et al.}~\cite{teh2005sharing}. HDP is an extension of the LDA algorithm where the number of topics is not known a priori. The \texttt{HierarchicalDirichletProcess} class implementing this approach, is a Java port of the \texttt{hdpla} python script that was used in the \tool{} paper~\cite{Palomba2017}.
 Additionally, we attempt to create clusters by computing the \textit{Term-frequency inverse-document-frequency} (tf-idf) score over the N-grams of all reviews, and then picking the N-grams with the highest score and fetching all reviews containing said N-gram. 
 
 Regardless of the clustering technique employed, at the end, we will have a set of processed reviews that we can use for linking. The return types of both clustering algorithms implement the \texttt{LinkableReview} interface, allowing the linker to use any of the two. Finally, both outputs are persisted to the database. By doing this, we do not need to compute new clusters each time we want to run the \textit{linker}. The clusters are only recomputed when new reviews are imported into \tool{}.
@@ -80,12 +83,11 @@ Regardless of the clustering technique employed, at the end, we will have a set 
 
 The goal of this subsystem is to provide an easy to use interface to automatically import and process source code into a format that \tool{} can use as input to its linking algorithm. 
 \paragraph{Source code import} 
-Via the web interface a user can easily enter the url of the git repository. \tool{} will then automatically clone the repository, parse the code and divide it in its elements. We define a \textit{source code element} as the basic building blocks of an application, i.e. a \textit{class} in Java. We only keep classes (normal, nested and static nested) and enums. We discards interfaces as they do not implement any logic and would thus rarely be targets for change requests.
-For each \textit{source code element}, we parse its public API and comments. 
+Via the web interface a user can easily enter the url of the git repository. \tool{} will then automatically clone the repository, parse the code and divide it in its elements. We define a \textit{source code element} as the basic building blocks of an application, i.e. a \textit{class} in Java. We only keep classes (normal, nested and static nested) and enums. We discard interfaces as they do not implement any logic and would thus rarely be targets for change requests. To do so we use the JavaParser library \footnote{\url{http://javaparser.org}}. This library creates an Abstract Syntax Tree (AST) which can then be traversed using the visitor pattern. Thus, we traverse the tree and read the public API and comments of each class, creating a \textit{source code element}.
 
 \paragraph{Source code preprocessing}
-After parsing, we process each code element as we did with the review pipeline.
-We split composed identifiers, such as camelCase and snake\_case, we remove special characters, english and programming stop words and stem from each code element to produce bag of tokens which we then persist in the database, ready to be used for the linking algorithm. 
+After parsing, we process each code element as we did with the review pipeline~\cite{Palomba2017,BaezaYates:1999}.
+We split composed identifiers, such as camelCase and snake\_case, we remove special characters, english and programming stop words and stem each token using Porter's stemmer~\cite{porter1980algorithm}. from each code element to produce bag of tokens which we then persist in the database, ready to be used for the linking algorithm. 
 
 %
 % LINKING
@@ -98,5 +100,4 @@ Each two bag of words (one of each type) are compared using the Dice similarity 
 \end{equation*}
 where $\mathit{W}_{\mathit{cluster}_{i}}$represents the set of words contained in cluster $i$. $\mathit{W}_{\mathit{source}_{j}}$ represents the set of words contained in the source code element $j$.
 We normalize with respect to the shortest document, because user feedback is, in most cases, considerably shorter than our source code elements. Due to the normalization step, the Dice coefficient range is [0, 1].
-The tool, then, links stack traces and reviews having a Dice score higher than 0.5 (in a range between $\left[0, 1\right]$).
-The overall process is implemented in the \texttt{ChangeAdvisorLinker} class, which utilizes the \texttt{AsymmetricDiceIndex} class for the calculation of the index.
+The tool, then, links source code and reviews having a Dice score higher than 0.5 (in a range between $\left[0, 1\right]$). When linking, we keep a reference to the original (non-preprocessed) reviews. This is done in order to present the end-user with the context of the original feedback.

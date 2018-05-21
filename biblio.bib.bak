@@ -1046,4 +1046,24 @@ pages = {233--244}
   pages        = {281--290},
 }
 
+@InProceedings{oh2013facilitating,
+  author       = {Oh, Jeungmin and Kim, Daehoon and Lee, Uichin and Lee, Jae-Gil and Song, Junehwa},
+  title        = {Facilitating developer-user interactions with mobile app review digests},
+  booktitle    = {CHI'13 Extended Abstracts on Human Factors in Computing Systems},
+  year         = {2013},
+  organization = {ACM},
+  pages        = {1809--1814},
+}
+
+@Article{porter1980algorithm,
+  author    = {Porter, Martin F},
+  title     = {An algorithm for suffix stripping},
+  journal   = {Program},
+  year      = {1980},
+  volume    = {14},
+  number    = {3},
+  pages     = {130--137},
+  publisher = {MCB UP Ltd},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

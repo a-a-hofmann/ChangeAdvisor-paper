@@ -6,6 +6,11 @@ U.~Abelein, H.~Sharp, and B.~Paech.
   success?
 \newblock {\em IEEE software}, 30(6):17--23, 2013.
 
+\bibitem{BaezaYates:1999}
+R.~A. Baeza-Yates and B.~Ribeiro-Neto.
+\newblock {\em Modern Information Retrieval}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1999.
+
 \bibitem{dice1945measures}
 L.~R. Dice.
 \newblock Measures of the amount of ecologic association between species.
@@ -52,6 +57,11 @@ V.~N. Inukollu, D.~D. Keshamoni, T.~Kang, and M.~Inukollu.
   development life cycle.
 \newblock {\em arXiv preprint arXiv:1410.4537}, 2014.
 
+\bibitem{Mernik:2005}
+M.~Mernik, J.~Heering, and A.~M. Sloane.
+\newblock When and how to develop domain-specific languages.
+\newblock {\em ACM Comput. Surv.}, 37(4):316--344, Dec. 2005.
+
 \bibitem{oh2013facilitating}
 J.~Oh, D.~Kim, U.~Lee, J.-G. Lee, and J.~Song.
 \newblock Facilitating developer-user interactions with mobile app review
@@ -88,6 +98,11 @@ S.~Panichella, A.~Di~Sorbo, E.~Guzman, C.~A. Visaggio, G.~Canfora, and H.~C.
 \newblock In {\em Proceedings of the 2016 24th ACM SIGSOFT International
   Symposium on Foundations of Software Engineering}, pages 1023--1027. ACM,
   2016.
+
+\bibitem{porter1980algorithm}
+M.~F. Porter.
+\newblock An algorithm for suffix stripping.
+\newblock {\em Program}, 14(3):130--137, 1980.
 
 \bibitem{teh2005sharing}
 Y.~W. Teh, M.~I. Jordan, M.~J. Beal, and D.~M. Blei.
